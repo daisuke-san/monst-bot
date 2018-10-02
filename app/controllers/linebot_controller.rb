@@ -38,14 +38,15 @@ class LinebotController < ApplicationController
      end
     end
 
+    str = ""
     row.each do |_col1, _col2, _col3, _col4|
-      puts "#{_col1} : #{_col2}"
-      message = {
-        type: 'text',
-        text: "#{_col1} : #{_col2}\n"
-      }
-      client.reply_message(event['replyToken'], message)
+      str = str << "#{_col1} : #{_col2}\n"
     end
+    message = {
+      type: 'text',
+      text: str
+    }
+    client.reply_message(event['replyToken'], message)
   end
 
   def callback
