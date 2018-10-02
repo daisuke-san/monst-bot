@@ -46,7 +46,6 @@ class LinebotController < ApplicationController
       type: 'text',
       text: str
     }
-    puts message
   end
 
   def callback
@@ -65,6 +64,7 @@ class LinebotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           message = scraiping
+          puts message
           # message = {
           #   type: 'text',
           #   text: event.message['text']
