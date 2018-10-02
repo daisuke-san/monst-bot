@@ -46,7 +46,7 @@ class LinebotController < ApplicationController
       type: 'text',
       text: str
     }
-    client.reply_message(event['replyToken'], message)
+    puts message
   end
 
   def callback
@@ -64,12 +64,13 @@ class LinebotController < ApplicationController
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          scraiping
+          message = scraiping
           # message = {
           #   type: 'text',
           #   text: event.message['text']
           # }
           # client.reply_message(event['replyToken'], message)
+          client.reply_message(event['replyToken'], message)
         end
       end
     }
