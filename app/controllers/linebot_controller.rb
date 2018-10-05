@@ -3,7 +3,7 @@ class LinebotController < ApplicationController
   #require 'nokogiri'
   require 'open-uri'
   require 'sanitize'
-  require 'scraiping_service'
+  require_relative 'scraiping_service'
 
   # callbackアクションのCSRFトークン認証を無効
   protect_from_forgery :except => [:callback]
