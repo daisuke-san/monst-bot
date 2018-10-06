@@ -24,14 +24,13 @@ class LinebotController < ApplicationController
     end
 
     events = client.parse_events_from(body)
-    # scraping_service = ScrapingService.new()
 
     events.each { |event|
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          message = ScrapingService.new.scraping
+          message = ScrapingService.new.scraping(event.message['text'])
           client.reply_message(event['replyToken'], message)
         end
       end
