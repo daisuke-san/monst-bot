@@ -7,15 +7,21 @@ class ScrapingService
     puts line_message
     if line_message == "イベント"
       str_event = get_event_schedule
-      message = {
-        type: 'text',
-        text: "モンストイベント情報だってばよ\n" << "#{str_event}"
-      }
+      message = [
+          {
+            type: 'text',
+            text: "[イベント]だな\n待ってろってばよ"
+          },
+          {
+            type: 'text',
+            text: "ほらよってばよ\n" << "#{str_event}"
+          }
+        ]
       return message
     else
       message = {
         type: 'text',
-        text: "何言ってるか分かんないってばよ"
+        text: "何言ってるか分かんないってばよ\n螺旋丸くらわすぞ"
       }
       return message
     end
@@ -62,7 +68,9 @@ class ScrapingService
     end
 
     str_message = ""
-    row.each do |_col1, _col2, _col3, _col4|
+    if _col2.nil?
+      str_message = str_message << "【#{_col1}】\n"
+    else
       str_message = str_message << "#{_col1} : #{_col2}\n"
     end
 
