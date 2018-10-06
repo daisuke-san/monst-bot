@@ -65,7 +65,7 @@ class LinebotController < ApplicationController
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          message = scraiping_service.scraping
+          message = scraping_service.scraping
           # message = {
           #   type: 'text',
           #   text: event.message['text']
