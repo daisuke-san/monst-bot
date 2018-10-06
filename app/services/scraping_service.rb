@@ -1,11 +1,8 @@
 class ScrapingService
   require 'nokogiri'
 
-<<<<<<< HEAD
-  MONST_URL = 'https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/'
+  MONST_URL = "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/"
 
-=======
->>>>>>> ffb2cd9b5545076b1c90c400793771a05d705278
   def scraping(line_message)
     puts line_message
     if line_message == "イベント"
@@ -15,7 +12,6 @@ class ScrapingService
         text: "モンストイベント情報だってばよ\n" << "#{str_event}"
       }
       return message
-<<<<<<< HEAD
     else
       message = {
         type: 'text',
@@ -27,20 +23,6 @@ class ScrapingService
   # イベント情報取得メソッド
   def get_event_schedule
       html_monst = open(MONST_URL)
-=======
-    end
-  else
-    message = {
-      type: 'text',
-      text: "何言ってるか分かんないってばよ"
-    }
-    return message
-  end
-
-  # イベント情報取得メソッド
-  def get_event_schedule
-      html_monst = open('https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/')
->>>>>>> ffb2cd9b5545076b1c90c400793771a05d705278
       doc = Nokogiri::HTML.parse(html_monst)
       doc1 = doc.css('.monst_schedule_table')[0]
       row = []
@@ -63,10 +45,7 @@ class ScrapingService
        end
       end
 
-<<<<<<< HEAD
       puts row
-=======
->>>>>>> ffb2cd9b5545076b1c90c400793771a05d705278
       str = ""
       row.each do |_col1, _col2, _col3, _col4|
         str = str << "#{_col1} : #{_col2}\n"
