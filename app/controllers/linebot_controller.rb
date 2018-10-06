@@ -3,7 +3,7 @@ class LinebotController < ApplicationController
   #require 'nokogiri'
   require 'open-uri'
   require 'sanitize'
-  require 'scraiping_service.rb'
+  require './scraping_service.rb'
 
   # callbackアクションのCSRFトークン認証を無効
   protect_from_forgery :except => [:callback]
@@ -58,7 +58,7 @@ class LinebotController < ApplicationController
     end
 
     events = client.parse_events_from(body)
-    scraiping_service = ScrapingService.new()
+    scraping_service = ScrapingService.new()
 
     events.each { |event|
       case event

@@ -1,7 +1,7 @@
 class ScrapingService
   require 'nokogiri'
-  
-  def scraiping
+
+  def scraping
     html_monst = open('https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/')
     doc = Nokogiri::HTML.parse(html_monst)
     doc1 = doc.css('.monst_schedule_table')[0]
