@@ -68,10 +68,12 @@ class ScrapingService
     end
 
     str_message = ""
-    if _col2.nil?
-      str_message = str_message << "【#{_col1}】\n"
-    else
-      str_message = str_message << "#{_col1} : #{_col2}\n"
+    row.each do |_col1, _col2, _col3, _col4|
+      if _col2.nil?
+        str_message = str_message << "【#{_col1}】\n"
+      else
+        str_message = str_message << "#{_col1} : #{_col2}\n"
+      end
     end
 
     return str_message
