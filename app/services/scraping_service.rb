@@ -174,6 +174,6 @@ class ScrapingService
               }
             }
           }
-  return message
-
+    return message
+  end
 end
