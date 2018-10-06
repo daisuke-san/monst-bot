@@ -19,6 +19,7 @@ class ScrapingService
       }
       return message
     end
+  end
 
   # イベント情報取得メソッド
   def get_event_schedule
