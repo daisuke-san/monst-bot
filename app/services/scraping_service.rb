@@ -65,14 +65,6 @@ class ScrapingService
                     "label": "Yes",
                     "text": "yes"
                   }
-                },
-                {
-                  "imageUrl": urls[6],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
                 }
             ]
         }
