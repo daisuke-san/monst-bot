@@ -26,14 +26,14 @@ class ScrapingService
         "template": {
             "type": "image_carousel",
             "columns": [
-                # {
-                #   "imageUrl": urls[1],
-                #   "action": {
-                #     "type": "uri",
-                #     "label": "攻略サイトへ",
-                #     "text": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
-                #   }
-                # },
+                {
+                  "imageUrl": urls[1],
+                  "action": {
+                    "type": "uri",
+                    "label": "攻略サイトへ",
+                    "uri": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
+                  }
+                },
                 {
                   "imageUrl": urls[2],
                   "action": {
@@ -60,6 +60,86 @@ class ScrapingService
                 },
                 {
                   "imageUrl": urls[5],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[6],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[7],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[8],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[9],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[10],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[11],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[12],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[13],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[14],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[15],
                   "action": {
                     "type": "message",
                     "label": "Yes",
