@@ -19,7 +19,7 @@ class ScrapingService
         ]
       return message
     elsif line_message.include?("禁忌")
-      # get_quest_guide
+      urls = get_quest_guide
       message = {
         "type": "template",
         "altText": "this is a image carousel template",
@@ -27,7 +27,7 @@ class ScrapingService
             "type": "image_carousel",
             "columns": [
                 {
-                  "imageUrl": "https://example.com/bot/images/item1.jpg",
+                  "imageUrl": urls[0],
                   "action": {
                     "type": "postback",
                     "label": "Buy",
@@ -35,7 +35,7 @@ class ScrapingService
                   }
                 },
                 {
-                  "imageUrl": "https://example.com/bot/images/item2.jpg",
+                  "imageUrl": urls[1],
                   "action": {
                     "type": "message",
                     "label": "Yes",
@@ -43,7 +43,7 @@ class ScrapingService
                   }
                 },
                 {
-                  "imageUrl": "https://example.com/bot/images/item3.jpg",
+                  "imageUrl": urls[2],
                   "action": {
                     "type": "uri",
                     "label": "View detail",
@@ -113,6 +113,17 @@ class ScrapingService
     end
 
     return str_message
+  end
+
+  #攻略情報取得
+  def get_quest_guide
+    html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577")
+    doc = Nokogiri::HTML.parse(html_monst)
+    urls = []
+    tables = doc.css('.js-lazyload-img-wrap .c-progressive-img').each do |anchor|
+      urls << anchor[:"data-original"]
+    end
+    return urls
   end
 
 end
