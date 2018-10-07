@@ -21,7 +21,7 @@ class ScrapingService
     else
       message = {
         type: 'text',
-        text: "何言ってるか分かんないってばよ\n螺旋丸くらわすぞ"
+        text: "何いってっか分かんないってばよ\n螺旋丸くらわすぞ"
       }
       return message
     end
