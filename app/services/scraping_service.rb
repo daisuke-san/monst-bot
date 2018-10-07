@@ -30,8 +30,8 @@ class ScrapingService
                   "imageUrl": urls[1],
                   "action": {
                     "type": "uri",
-                    "label": "View detail",
-                    "text": "攻略サイトへ"
+                    "label": "攻略サイトへ",
+                    "text": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
                   }
                 },
                 {
