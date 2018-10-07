@@ -27,35 +27,27 @@ class ScrapingService
             "type": "image_carousel",
             "columns": [
                 {
-                  "imageUrl": urls[0],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
                   "imageUrl": urls[1],
                   "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
+                    "type": "uri",
+                    "label": "View detail",
+                    "text": "攻略サイトへ"
                   }
                 },
                 {
                   "imageUrl": urls[2],
                   "action": {
-                    "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/222"
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
                   }
                 },
                 {
                   "imageUrl": urls[3],
                   "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
+                    "type": "uri",
+                    "label": "View detail",
+                    "uri": "http://example.com/page/222"
                   }
                 },
                 {
@@ -68,6 +60,86 @@ class ScrapingService
                 },
                 {
                   "imageUrl": urls[5],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[6],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[7],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[8],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[9],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[10],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[11],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[12],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[13],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[14],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[15],
                   "action": {
                     "type": "message",
                     "label": "Yes",
