@@ -65,87 +65,88 @@ class ScrapingService
                     "label": "Yes",
                     "text": "yes"
                   }
-                },
-                {
-                  "imageUrl": urls[6],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[7],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[8],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[9],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[10],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[11],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[12],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[13],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[14],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[15],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
                 }
+                # ,
+                # {
+                #   "imageUrl": urls[6],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[7],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[8],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[9],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[10],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[11],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[12],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[13],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[14],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # },
+                # {
+                #   "imageUrl": urls[15],
+                #   "action": {
+                #     "type": "message",
+                #     "label": "Yes",
+                #     "text": "yes"
+                #   }
+                # }
             ]
         }
       }
