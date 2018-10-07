@@ -29,9 +29,9 @@ class ScrapingService
                 {
                   "imageUrl": urls[0],
                   "action": {
-                    "type": "postback",
-                    "label": "Buy",
-                    "data": "action=buy&itemid=111"
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
                   }
                 },
                 {
@@ -48,6 +48,30 @@ class ScrapingService
                     "type": "uri",
                     "label": "View detail",
                     "uri": "http://example.com/page/222"
+                  }
+                },
+                {
+                  "imageUrl": urls[3],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[4],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
+                  }
+                },
+                {
+                  "imageUrl": urls[5],
+                  "action": {
+                    "type": "message",
+                    "label": "Yes",
+                    "text": "yes"
                   }
                 }
             ]
