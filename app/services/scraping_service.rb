@@ -26,14 +26,14 @@ class ScrapingService
         "template": {
             "type": "image_carousel",
             "columns": [
-                {
-                  "imageUrl": urls[1],
-                  "action": {
-                    "type": "uri",
-                    "label": "攻略サイトへ",
-                    "text": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
-                  }
-                },
+                # {
+                #   "imageUrl": urls[1],
+                #   "action": {
+                #     "type": "uri",
+                #     "label": "攻略サイトへ",
+                #     "text": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
+                #   }
+                # },
                 {
                   "imageUrl": urls[2],
                   "action": {
