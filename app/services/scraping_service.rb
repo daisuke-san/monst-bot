@@ -240,7 +240,7 @@ class ScrapingService
 
   #攻略情報取得
   def get_quest_guide(line_message)
-    html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577")
+    html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/105857")
     doc = Nokogiri::HTML.parse(html_monst)
 
     str = ""
