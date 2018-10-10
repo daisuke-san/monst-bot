@@ -34,7 +34,7 @@ class ScrapingService
               text: "[禁忌]だな\n待ってろってばよ"
             },
             {
-              type: 'uri',
+              type: 'text',
               text: quest_link
             }
           ]
