@@ -105,7 +105,15 @@ MONST_URL = "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/"
 def get_event_schedule
   html_monst = open(MONST_URL)
   doc = Nokogiri::HTML.parse(html_monst)
-  tables = doc.css('.monst_schedule_table')[0]
+  trigger_data = nil
+  doc.css('h4').each do |data|
+    if data.text == "通常降臨クエスト"
+      trigger_data = data
+    end
+  end
+
+  tables = trigger_data.parent
+
   row = []
   col1 = nil
   col2 = nil
@@ -149,7 +157,6 @@ def get_event_schedule
       str_message = str_message << "#{_col1} : #{_col2}\n"
     end
   end
-
   return str_message
 end
 
@@ -224,5 +231,5 @@ end
 
 
 
-msg = scraping("禁忌9")
-puts msg
+msg = scraping("イベント")
+# puts msg

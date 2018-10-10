@@ -164,7 +164,15 @@ class ScrapingService
   def get_event_schedule
     html_monst = open(MONST_URL)
     doc = Nokogiri::HTML.parse(html_monst)
-    tables = doc.css('.monst_schedule_table')[0]
+    trigger_data = nil
+    doc.css('h4').each do |data|
+      if data.text == "通常降臨クエスト"
+        trigger_data = data
+      end
+    end
+
+    tables = trigger_data.parent
+    
     row = []
     col1 = nil
     col2 = nil
