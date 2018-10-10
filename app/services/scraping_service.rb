@@ -284,8 +284,10 @@ class ScrapingService
     doc.css('a').each do |data|
       if data.text == str
         quest_link = data['href']
+        p data['href']
       end
     end
+    p quest_link
 
     return quest_link
 
