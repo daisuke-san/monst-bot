@@ -172,7 +172,7 @@ class ScrapingService
     end
 
     tables = trigger_data.parent
-    
+
     row = []
     col1 = nil
     col2 = nil
@@ -216,7 +216,7 @@ class ScrapingService
         str_message = str_message << "#{_col1} : #{_col2}\n"
       end
     end
-
+    p str_message
     return str_message
   end
 
