@@ -216,7 +216,7 @@ class ScrapingService
         str_message = str_message << "#{_col1} : #{_col2}\n"
       end
     end
-    return str_message
+    return str_message.trancete(1997)
   end
 
   #攻略情報取得
