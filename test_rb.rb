@@ -277,5 +277,5 @@ end
 
 
 
-msg = scraping("禁忌 11")
+msg = scraping("禁忌11")
 # puts msg

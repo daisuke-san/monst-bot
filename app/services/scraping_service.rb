@@ -280,6 +280,9 @@ class ScrapingService
       str = "んなのねーよ。"
     end
 
+    p doc
+    p str
+
     quest_link = nil
     doc.css('a').each do |data|
       if data.text == str
