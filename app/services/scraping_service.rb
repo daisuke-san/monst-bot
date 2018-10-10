@@ -19,137 +19,147 @@ class ScrapingService
         ]
       return message
     elsif line_message.include?("禁忌")
-      urls = get_quest_guide
-      message = {
-        "type": "template",
-        "altText": "this is a image carousel template",
-        "template": {
-            "type": "image_carousel",
-            "columns": [
-                {
-                  "imageUrl": urls[1],
-                  "action": {
-                    "type": "uri",
-                    "label": "攻略サイトへ",
-                    "uri": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
-                  }
-                },
-                {
-                  "imageUrl": urls[2],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[3],
-                  "action": {
-                    "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/222"
-                  }
-                },
-                {
-                  "imageUrl": urls[4],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                },
-                {
-                  "imageUrl": urls[5],
-                  "action": {
-                    "type": "message",
-                    "label": "Yes",
-                    "text": "yes"
-                  }
-                }
-                # ,
-                # {
-                #   "imageUrl": urls[6],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[7],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[8],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[9],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[10],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[11],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[12],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[13],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[14],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # },
-                # {
-                #   "imageUrl": urls[15],
-                #   "action": {
-                #     "type": "message",
-                #     "label": "Yes",
-                #     "text": "yes"
-                #   }
-                # }
-            ]
-        }
-      }
+      quest_link = get_quest_guide
+      message = [
+          {
+            type: 'text',
+            text: "[禁忌]だな\n待ってろってばよ"
+          },
+          {
+            type: 'uri',
+            text: quest_link
+          }
+        ]
+      # message = {
+      #   "type": "template",
+      #   "altText": "this is a image carousel template",
+      #   "template": {
+      #       "type": "image_carousel",
+      #       "columns": [
+      #           {
+      #             "imageUrl": urls[1],
+      #             "action": {
+      #               "type": "uri",
+      #               "label": "攻略サイトへ",
+      #               "uri": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
+      #             }
+      #           },
+      #           {
+      #             "imageUrl": urls[2],
+      #             "action": {
+      #               "type": "message",
+      #               "label": "Yes",
+      #               "text": "yes"
+      #             }
+      #           },
+      #           {
+      #             "imageUrl": urls[3],
+      #             "action": {
+      #               "type": "uri",
+      #               "label": "View detail",
+      #               "uri": "http://example.com/page/222"
+      #             }
+      #           },
+      #           {
+      #             "imageUrl": urls[4],
+      #             "action": {
+      #               "type": "message",
+      #               "label": "Yes",
+      #               "text": "yes"
+      #             }
+      #           },
+      #           {
+      #             "imageUrl": urls[5],
+      #             "action": {
+      #               "type": "message",
+      #               "label": "Yes",
+      #               "text": "yes"
+      #             }
+      #           }
+      #           # ,
+      #           # {
+      #           #   "imageUrl": urls[6],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[7],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[8],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[9],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[10],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[11],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[12],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[13],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[14],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # },
+      #           # {
+      #           #   "imageUrl": urls[15],
+      #           #   "action": {
+      #           #     "type": "message",
+      #           #     "label": "Yes",
+      #           #     "text": "yes"
+      #           #   }
+      #           # }
+      #       ]
+      #   }
+      # }
       return message
     else
       message = {
@@ -223,11 +233,58 @@ class ScrapingService
   def get_quest_guide
     html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577")
     doc = Nokogiri::HTML.parse(html_monst)
-    urls = []
-    tables = doc.css('.js-lazyload-img-wrap .c-progressive-img').each do |anchor|
-      urls << anchor[:"data-original"]
+
+    str = ""
+    if line_message.include?("秘")
+      str = "秘ノ獄"
+    elsif line_message.include?("15")
+      str = "十五ノ獄"
+    elsif line_message.include?("14")
+      str = "十四ノ獄"
+    elsif line_message.include?("13")
+      str = "十三ノ獄"
+    elsif line_message.include?("12")
+      str = "十二ノ獄"
+    elsif line_message.include?("11")
+      str = "十一ノ獄"
+    elsif line_message.include?("10")
+      str = "十ノ獄"
+    elsif line_message.include?("9")
+      str = "九ノ獄"
+    elsif line_message.include?("8")
+      str = "八ノ獄"
+    elsif line_message.include?("7")
+      str = "七ノ獄"
+    elsif line_message.include?("6")
+      str = "六ノ獄"
+    elsif line_message.include?("5")
+      str = "五ノ獄"
+    elsif line_message.include?("4")
+      str = "四ノ獄"
+    elsif line_message.include?("3")
+      str = "三ノ獄"
+    elsif line_message.include?("2")
+      str = "二ノ獄"
+    elsif line_message.include?("1")
+      str = "一ノ獄"
+    else
+      str = "んなのねーよ。"
     end
-    return urls
+
+    quest_link = nil
+    doc.css('a').each do |data|
+      if data.text == str
+        quest_link = data['href']
+      end
+    end
+
+    return quest_link
+
+    # urls = []
+    # tables = doc.css('.js-lazyload-img-wrap .c-progressive-img').each do |anchor|
+    #   urls << anchor[:"data-original"]
+    # end
+    # return urls
   end
 
 end

@@ -160,9 +160,55 @@ def get_event_schedule
   return str_message
 end
 
-def get_quest_guide
-  html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577")
+def get_quest_guide(line_message)
+  html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/105857")
   doc = Nokogiri::HTML.parse(html_monst)
+  str = ""
+  if line_message.include?("秘")
+    str = "秘ノ獄"
+  elsif line_message.include?("15")
+    str = "十五ノ獄"
+  elsif line_message.include?("14")
+    str = "十四ノ獄"
+  elsif line_message.include?("13")
+    str = "十三ノ獄"
+  elsif line_message.include?("12")
+    str = "十二ノ獄"
+  elsif line_message.include?("11")
+    str = "十一ノ獄"
+  elsif line_message.include?("10")
+    str = "十ノ獄"
+  elsif line_message.include?("9")
+    str = "九ノ獄"
+  elsif line_message.include?("8")
+    str = "八ノ獄"
+  elsif line_message.include?("7")
+    str = "七ノ獄"
+  elsif line_message.include?("6")
+    str = "六ノ獄"
+  elsif line_message.include?("5")
+    str = "五ノ獄"
+  elsif line_message.include?("4")
+    str = "四ノ獄"
+  elsif line_message.include?("3")
+    str = "三ノ獄"
+  elsif line_message.include?("2")
+    str = "二ノ獄"
+  elsif line_message.include?("1")
+    str = "一ノ獄"
+  else
+    str = "んなのねーよ。"
+  end
+
+  quest_link = nil
+  doc.css('a').each do |data|
+    if data.text == str
+      quest_link = data['href']
+    end
+  end
+  p str
+  p quest_link
+
   tables = doc.css('.js-lazyload-img-wrap .c-progressive-img').each do |anchor|
     puts anchor[:"data-original"]
   end
@@ -185,41 +231,41 @@ def scraping(line_message)
       ]
     return message
   elsif line_message.include?("禁忌")
-    # get_quest_guide
-    message = {
-      "type": "template",
-      "altText": "this is a image carousel template",
-      "template": {
-          "type": "image_carousel",
-          "columns": [
-              {
-                "imageUrl": "https://example.com/bot/images/item1.jpg",
-                "action": {
-                  "type": "postback",
-                  "label": "Buy",
-                  "data": "action=buy&itemid=111"
-                }
-              },
-              {
-                "imageUrl": "https://example.com/bot/images/item2.jpg",
-                "action": {
-                  "type": "message",
-                  "label": "Yes",
-                  "text": "yes"
-                }
-              },
-              {
-                "imageUrl": "https://example.com/bot/images/item3.jpg",
-                "action": {
-                  "type": "uri",
-                  "label": "View detail",
-                  "uri": "http://example.com/page/222"
-                }
-              }
-          ]
-      }
-    }
-    return message
+    get_quest_guide(line_message)
+    # message = {
+    #   "type": "template",
+    #   "altText": "this is a image carousel template",
+    #   "template": {
+    #       "type": "image_carousel",
+    #       "columns": [
+    #           {
+    #             "imageUrl": "https://example.com/bot/images/item1.jpg",
+    #             "action": {
+    #               "type": "postback",
+    #               "label": "Buy",
+    #               "data": "action=buy&itemid=111"
+    #             }
+    #           },
+    #           {
+    #             "imageUrl": "https://example.com/bot/images/item2.jpg",
+    #             "action": {
+    #               "type": "message",
+    #               "label": "Yes",
+    #               "text": "yes"
+    #             }
+    #           },
+    #           {
+    #             "imageUrl": "https://example.com/bot/images/item3.jpg",
+    #             "action": {
+    #               "type": "uri",
+    #               "label": "View detail",
+    #               "uri": "http://example.com/page/222"
+    #             }
+    #           }
+    #       ]
+    #   }
+    # }
+    # return message
   else
     message = {
       type: 'text',
@@ -231,5 +277,5 @@ end
 
 
 
-msg = scraping("イベント")
+msg = scraping("禁忌 11")
 # puts msg
