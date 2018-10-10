@@ -19,17 +19,26 @@ class ScrapingService
         ]
       return message
     elsif line_message.include?("禁忌")
-      quest_link = get_quest_guide
-      message = [
-          {
-            type: 'text',
-            text: "[禁忌]だな\n待ってろってばよ"
-          },
-          {
-            type: 'uri',
-            text: quest_link
-          }
-        ]
+      quest_link = get_quest_guide(line_message)
+      if quest_link.nil?
+        message = [
+            {
+              type: 'text',
+              text: "んなのないってばよ"
+            }
+          ]
+      else
+        message = [
+            {
+              type: 'text',
+              text: "[禁忌]だな\n待ってろってばよ"
+            },
+            {
+              type: 'uri',
+              text: quest_link
+            }
+          ]
+      end
       # message = {
       #   "type": "template",
       #   "altText": "this is a image carousel template",
@@ -230,7 +239,7 @@ class ScrapingService
   end
 
   #攻略情報取得
-  def get_quest_guide
+  def get_quest_guide(line_message)
     html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577")
     doc = Nokogiri::HTML.parse(html_monst)
 
