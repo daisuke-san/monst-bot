@@ -180,19 +180,19 @@ class ScrapingService
     th_flg = false
     td_flg = false
     doc.css('.monst-tekisei-table').css('table tr').each do |data|
-      headers = data.css('th').at
-      dtls = data.css('td').at
+      headers = data.css('th')
+      dtls = data.css('td')
       if headers.empty?
-        if td_flg == false
+        if td_flg == true
           monster = dtls.css('a').at.text
           quest_tekisei = quest_tekisei << "#{monster}\n"
-          td_flg = true
-        else
           td_flg = false
+        else
+          td_flg = true
         end
       elsif dtls.empty?
         if th_flg == false
-          rank = headers.text
+          rank = headers.at.text
           quest_tekisei = quest_tekisei << "【#{rank}】\n"
           th_flg = true
         else
