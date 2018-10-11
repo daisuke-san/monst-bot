@@ -19,156 +19,33 @@ class ScrapingService
         ]
       return message
     elsif line_message.include?("禁忌")
-      quest_link = get_quest_guide(line_message)
-      if quest_link.nil?
+      quest_name = get_kinki_quest_name(line_message)
+      quest_url = get_quest_url(quest_name)
+      if quest_url.nil?
         message = [
             {
               type: 'text',
               text: "んなのないってばよ"
             }
           ]
-      else
-        message = [
-            {
-              type: 'text',
-              text: "[禁忌]だな\n待ってろってばよ"
-            },
-            {
-              type: 'text',
-              text: quest_link
-            }
-          ]
+        return message
       end
-      # message = {
-      #   "type": "template",
-      #   "altText": "this is a image carousel template",
-      #   "template": {
-      #       "type": "image_carousel",
-      #       "columns": [
-      #           {
-      #             "imageUrl": urls[1],
-      #             "action": {
-      #               "type": "uri",
-      #               "label": "攻略サイトへ",
-      #               "uri": "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/107577"
-      #             }
-      #           },
-      #           {
-      #             "imageUrl": urls[2],
-      #             "action": {
-      #               "type": "message",
-      #               "label": "Yes",
-      #               "text": "yes"
-      #             }
-      #           },
-      #           {
-      #             "imageUrl": urls[3],
-      #             "action": {
-      #               "type": "uri",
-      #               "label": "View detail",
-      #               "uri": "http://example.com/page/222"
-      #             }
-      #           },
-      #           {
-      #             "imageUrl": urls[4],
-      #             "action": {
-      #               "type": "message",
-      #               "label": "Yes",
-      #               "text": "yes"
-      #             }
-      #           },
-      #           {
-      #             "imageUrl": urls[5],
-      #             "action": {
-      #               "type": "message",
-      #               "label": "Yes",
-      #               "text": "yes"
-      #             }
-      #           }
-      #           # ,
-      #           # {
-      #           #   "imageUrl": urls[6],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[7],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[8],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[9],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[10],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[11],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[12],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[13],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[14],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # },
-      #           # {
-      #           #   "imageUrl": urls[15],
-      #           #   "action": {
-      #           #     "type": "message",
-      #           #     "label": "Yes",
-      #           #     "text": "yes"
-      #           #   }
-      #           # }
-      #       ]
-      #   }
-      # }
+
+      quest_tekisei = get_quest_tekisei(quest_url)
+      message = [
+          {
+            type: 'text',
+            text: "[禁忌の獄 #{quest_name}]だな\n待ってろってばよ"
+          },
+          {
+            type: 'text',
+            text: quest_url
+          },
+          {
+            type: 'text',
+            text: "適正はこれだってばよ\n#{quest_tekisei}"
+          }
+        ]
       return message
     else
       message = {
@@ -238,61 +115,90 @@ class ScrapingService
     return str_message.truncate(1500)
   end
 
-  #攻略情報取得
-  def get_quest_guide(line_message)
+  #禁忌の獄階数名称取得
+  def get_kinki_quest_name(line_message)
+    if line_message.include?("秘")
+      return "秘ノ獄"
+    elsif line_message.include?("15")
+      return "十五ノ獄"
+    elsif line_message.include?("14")
+      return "十四ノ獄"
+    elsif line_message.include?("13")
+      return "十三ノ獄"
+    elsif line_message.include?("12")
+      return "十二ノ獄"
+    elsif line_message.include?("11")
+      return "十一ノ獄"
+    elsif line_message.include?("10")
+      return "十ノ獄"
+    elsif line_message.include?("9")
+      return "九ノ獄"
+    elsif line_message.include?("8")
+      return "八ノ獄"
+    elsif line_message.include?("7")
+      return "七ノ獄"
+    elsif line_message.include?("6")
+      return "六ノ獄"
+    elsif line_message.include?("5")
+      return "五ノ獄"
+    elsif line_message.include?("4")
+      return "四ノ獄"
+    elsif line_message.include?("3")
+      return "三ノ獄"
+    elsif line_message.include?("2")
+      return "二ノ獄"
+    elsif line_message.include?("1")
+      return "一ノ獄"
+    else
+      return "んなのねーよ。"
+    end
+  end
+
+  #禁忌クエストURL取得
+  def get_kinki_quest_url(quest_name)
     html_monst = open("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/105857")
     doc = Nokogiri::HTML.parse(html_monst)
 
-    str = ""
-    if line_message.include?("秘")
-      str = "秘ノ獄"
-    elsif line_message.include?("15")
-      str = "十五ノ獄"
-    elsif line_message.include?("14")
-      str = "十四ノ獄"
-    elsif line_message.include?("13")
-      str = "十三ノ獄"
-    elsif line_message.include?("12")
-      str = "十二ノ獄"
-    elsif line_message.include?("11")
-      str = "十一ノ獄"
-    elsif line_message.include?("10")
-      str = "十ノ獄"
-    elsif line_message.include?("9")
-      str = "九ノ獄"
-    elsif line_message.include?("8")
-      str = "八ノ獄"
-    elsif line_message.include?("7")
-      str = "七ノ獄"
-    elsif line_message.include?("6")
-      str = "六ノ獄"
-    elsif line_message.include?("5")
-      str = "五ノ獄"
-    elsif line_message.include?("4")
-      str = "四ノ獄"
-    elsif line_message.include?("3")
-      str = "三ノ獄"
-    elsif line_message.include?("2")
-      str = "二ノ獄"
-    elsif line_message.include?("1")
-      str = "一ノ獄"
-    else
-      str = "んなのねーよ。"
-    end
-
-    p doc
-    p str
-
-    quest_link = nil
+    quest_url = nil
     doc.css('a').each do |data|
       if data.text == str
-        quest_link = data['href']
+        quest_url = data['href']
         p data['href']
       end
     end
-    p quest_link
+    p quest_url
+    return quest_url
+  end
 
-    return quest_link
+  #攻略情報取得
+  def get_quest_tekisei(quest_url)
+    html_monst = open(quest_url)
+    doc = Nokogiri::HTML.parse(html_monst)
+
+    quest_tekisei = nil
+    th_target_flg = 0
+    td_target_flg = 0
+    doc.css('.monst-tekisei-table').each do |data|
+      if data.name == "th"
+        if th_target_flg == 0
+          quest_tekisei << "【#{data.text}】\n"
+          th_traget_flg = 1
+        else
+          th_traget_flg = 1
+        end
+      elsif data.name == "td"
+        if td_target_flg == 1
+          quest_tekisei << "【#{data.at_css('a').text}】\n"
+          td_target_flg = 0
+        else
+          td_target_flg = 1
+        end
+      end
+        # quest_tekisei = data['href']
+        # p data['href']
+    end
+    p quest_tekisei
+    return quest_tekisei
 
     # urls = []
     # tables = doc.css('.js-lazyload-img-wrap .c-progressive-img').each do |anchor|
