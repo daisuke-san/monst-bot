@@ -190,14 +190,17 @@ class ScrapingService
         else
           td_flg = true
         end
+        p quest_tekisei
       elsif dtls.empty?
         if th_flg == false
-          rank = headers.at.text
+          p dtls
+          rank = headers[0].text
           quest_tekisei = quest_tekisei << "【#{rank}】\n"
           th_flg = true
         else
           th_flg = false
         end
+        p quest_tekisei
       end
         # quest_tekisei = data['href']
         # p data['href']
