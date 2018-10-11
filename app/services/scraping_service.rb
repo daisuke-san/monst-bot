@@ -179,6 +179,7 @@ class ScrapingService
     th_target_flg = 0
     td_target_flg = 0
     doc.css('.monst-tekisei-table').each do |data|
+      p data.name
       if data.name == "th"
         if th_target_flg == 0
           quest_tekisei << "【#{data.text}】\n"
