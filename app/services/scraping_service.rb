@@ -161,7 +161,7 @@ class ScrapingService
 
     quest_url = nil
     doc.css('a').each do |data|
-      if data.text.include?(quest_name)
+      if data.text == quest_name
         quest_url = data['href']
         p data['href']
       end
