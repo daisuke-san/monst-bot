@@ -176,23 +176,27 @@ class ScrapingService
     doc = Nokogiri::HTML.parse(html_monst)
 
     quest_tekisei = nil
-    th_target_flg = 0
-    td_target_flg = 0
-    doc.css('.monst-tekisei-table').each do |data|
-      p data.name
-      if data.name == "th"
-        if th_target_flg == 0
-          quest_tekisei << "【#{data.text}】\n"
-          th_traget_flg = 1
+
+    th_flg = false
+    td_flg = false
+    doc.css('.monst-tekisei-table').css('table tr').each do |data|
+      headers = data.css('th')
+      dtls = data.css('td')
+      if headers.empty?
+        if td_flg == false
+          monster = dtls.css('a')[0].text
+          quest_tekisei = quest_tekisei << "#{monster}\n"
+          td_flg = true
         else
-          th_traget_flg = 1
+          td_flg = false
         end
-      elsif data.name == "td"
-        if td_target_flg == 1
-          quest_tekisei << "【#{data.at_css('a').text}】\n"
-          td_target_flg = 0
+      elsif dtls.empty?
+        if th_flg == false
+          rank = headers[0].text
+          quest_tekisei = quest_tekisei << "#{rank}\n"
+          th_flg = true
         else
-          td_target_flg = 1
+          th_flg = false
         end
       end
         # quest_tekisei = data['href']
