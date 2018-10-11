@@ -150,7 +150,7 @@ class ScrapingService
     elsif line_message.include?("1")
       return "一ノ獄"
     else
-      return "んなのねーよ。"
+      return nil
     end
   end
 
