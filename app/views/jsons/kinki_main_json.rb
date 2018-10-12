@@ -203,7 +203,7 @@ class KinkiMainJSON
                                 "height": "sm",
                                 "action": {
                                   "type": "uri",
-                                  "label": "十三ノ獄",
+                                  "label": "13獄",
                                   "uri": "https://linecorp.com"
                                 },
                                 "flex": 1
@@ -214,7 +214,7 @@ class KinkiMainJSON
                                 "height": "sm",
                                 "action": {
                                   "type": "uri",
-                                  "label": "十四ノ獄",
+                                  "label": "14獄",
                                   "uri": "https://linecorp.com"
                                 },
                                 "flex": 1
@@ -225,7 +225,7 @@ class KinkiMainJSON
                                 "height": "sm",
                                 "action": {
                                   "type": "uri",
-                                  "label": "十五ノ獄",
+                                  "label": "15獄",
                                   "uri": "https://linecorp.com"
                                 },
                                 "flex": 1
