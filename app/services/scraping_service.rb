@@ -1,5 +1,6 @@
 class ScrapingService
   require 'nokogiri'
+  require_relative '../views/jsons/kinki_main_json.rb'
 
   MONST_URL = "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/"
 
@@ -46,6 +47,10 @@ class ScrapingService
             text: "適正はこれだってばよ\n#{quest_tekisei}"
           }
         ]
+      return message
+    elsif line_message == "あいう"
+      message = KinkiMainJSON.new.REPLY_MESSAGE
+      p message
       return message
     else
       message = {
