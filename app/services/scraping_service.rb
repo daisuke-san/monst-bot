@@ -49,7 +49,7 @@ class ScrapingService
         ]
       return message
     elsif line_message == "あいう"
-      message = KinkiMainJSON.new.REPLY_MESSAGE
+      message = KinkiMainJSON::REPLY_MESSAGE
       p message
       return message
     else

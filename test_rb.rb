@@ -275,7 +275,18 @@ def scraping(line_message)
   end
 end
 
+class Test
+  STR = "あいう"
 
+  def get_name
+    return STR
+  end
+end
 
-msg = scraping("禁忌 11")
+#Main処理
+# msg = scraping("禁忌 11")
+p Test::STR
+# str = Test.new
+# p str.get_name
+
 # puts msg
