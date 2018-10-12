@@ -1,5 +1,8 @@
 class KinkiMainJSON
   REPLY_MESSAGE = {
+    "type": "flex",
+    "altText": "this is a flex message",
+    "contents": {
                "type": "bubble",
                "hero": {
                  "type": "image",
@@ -68,192 +71,193 @@ class KinkiMainJSON
                          "flex": 1
                        }
                      ]
-                   # },
-                   # {
-                   #   "type": "box",
-                   #   "layout": "horizontal",
-                   #   "margin": "none",
-                   #   "contents": [
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "4獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "5獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "6獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     }
-                   #   ]
-                   # },
-                   # {
-                   #   "type": "box",
-                   #   "layout": "horizontal",
-                   #   "margin": "none",
-                   #   "contents": [
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "7獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "8獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "9獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     }
-                   #   ]
-                   # },
-                   # {
-                   #   "type": "box",
-                   #   "layout": "horizontal",
-                   #   "margin": "none",
-                   #   "contents": [
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "10獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "11獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "12獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     }
-                   #   ]
-                   # },
-                   # {
-                   #   "type": "box",
-                   #   "layout": "horizontal",
-                   #   "margin": "none",
-                   #   "contents": [
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "13獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "14獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "15獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     }
-                   #   ]
-                   # },
-                   # {
-                   #   "type": "box",
-                   #   "layout": "horizontal",
-                   #   "margin": "none",
-                   #   "contents": [
-                   #     {
-                   #       "type": "button",
-                   #       "style": "link",
-                   #       "height": "sm",
-                   #       "action": {
-                   #         "type": "uri",
-                   #         "label": "秘獄",
-                   #         "uri": "https://linecorp.com"
-                   #       },
-                   #       "flex": 1
-                   #     },
-                   #     {
-                   #       "type": "filler"
-                   #     },
-                   #     {
-                   #       "type": "filler"
-                   #     }
-                   #   ]
+                   },
+                   {
+                     "type": "box",
+                     "layout": "horizontal",
+                     "margin": "none",
+                     "contents": [
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "4獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "5獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "6獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       }
+                     ]
+                   },
+                   {
+                     "type": "box",
+                     "layout": "horizontal",
+                     "margin": "none",
+                     "contents": [
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "7獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "8獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "9獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       }
+                     ]
+                   },
+                   {
+                     "type": "box",
+                     "layout": "horizontal",
+                     "margin": "none",
+                     "contents": [
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "10獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "11獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "12獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       }
+                     ]
+                   },
+                   {
+                     "type": "box",
+                     "layout": "horizontal",
+                     "margin": "none",
+                     "contents": [
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "13獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "14獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "15獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       }
+                     ]
+                   },
+                   {
+                     "type": "box",
+                     "layout": "horizontal",
+                     "margin": "none",
+                     "contents": [
+                       {
+                         "type": "button",
+                         "style": "link",
+                         "height": "sm",
+                         "action": {
+                           "type": "uri",
+                           "label": "秘獄",
+                           "uri": "https://linecorp.com"
+                         },
+                         "flex": 1
+                       },
+                       {
+                         "type": "filler"
+                       },
+                       {
+                         "type": "filler"
+                       }
+                     ]
                    }
                  ]
                }
              }
+           }
 end
