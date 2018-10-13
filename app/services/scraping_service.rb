@@ -1,7 +1,8 @@
 class ScrapingService
   require 'nokogiri'
   require_relative '../views/jsons/kinki_main_json.rb'
-  require_relative '../views/jsons/first_reply_json.rb'
+  # require_relative '../views/jsons/first_reply_json.rb'
+  require 'first_reply_json.rb'
 
   MONST_URL = "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/"
 
