@@ -28,7 +28,7 @@ class ScrapingService
       p message
       return message
     elsif line_message == "禁忌"
-      [
+      message = [
         FirstReplyJSON.new.getMessage(line_message),
         KinkiMainJSON::REPLY_MESSAGE
       ]
