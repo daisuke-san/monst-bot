@@ -6,7 +6,7 @@ class KinkiMainJSON
                       "type": "bubble",
                       "hero": {
                         "type": "image",
-                        "url": "https://github.com/daisuke-san/monst-bot/blob/topic-get-quest-guide/app/assets/images/kinki_main.jpg",
+                        "url": "https://raw.githubusercontent.com/daisuke-san/monst-bot/topic-get-quest-guide/app/assets/images/kinki_main.jpg",
                         "size": "full",
                         "aspectRatio": "3:1",
                         "aspectMode": "cover",
