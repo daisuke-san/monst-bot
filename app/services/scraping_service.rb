@@ -19,6 +19,17 @@ class ScrapingService
           }
         ]
       return message
+    elsif line_message == "覇者"
+      message = [
+        FirstReplyJSON.new.getMessage(line_message)},
+        KinkiMainJSON::REPLY_MESSAGE
+      ]
+      p message
+      return message
+    elsif line_message == "禁忌"
+      message = KinkiMainJSON::REPLY_MESSAGE
+      p message
+      return message
     elsif line_message.include?("禁忌")
       quest_name = get_kinki_quest_name(line_message)
       quest_url = get_kinki_quest_url(quest_name)
@@ -47,10 +58,6 @@ class ScrapingService
             text: "適正はこれだってばよ\n#{quest_tekisei}"
           }
         ]
-      return message
-    elsif line_message == "あいう"
-      message = KinkiMainJSON::REPLY_MESSAGE
-      p message
       return message
     else
       message = {
