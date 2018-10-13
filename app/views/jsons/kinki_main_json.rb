@@ -6,7 +6,7 @@ class KinkiMainJSON
                       "type": "bubble",
                       "hero": {
                         "type": "image",
-                        "url": "https://gamewith.akamaized.net/img/ff31d97a1e7e2bcce4ab533b4050a2bd.jpg",
+                        "url": "../assets/images/kinki_main.jpg",
                         "size": "full",
                         "aspectRatio": "3:1",
                         "aspectMode": "cover",
