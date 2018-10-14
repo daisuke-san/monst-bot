@@ -90,4 +90,8 @@ class QuestInfo
 end
 
 #Main処理
-msg = get_quest_main("シュリン")
+msg = "攻略 シュリンガ"
+msg.slice!("攻略")
+msg = msg.gsub(" ", "")
+
+msg = get_quest_main(msg)

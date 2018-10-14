@@ -35,7 +35,8 @@ class ScrapingService
     elsif line_message.include?("攻略")
       msg = line_message
       msg.slice!("攻略")
-      msg.gsub(" ", "")
+      msg = msg.gsub(" ", "")
+
       quest_info = ScrapingQuestService.new.get_quest_main(msg)
       message = [
         FirstReplyJSON.new.getMessage(line_message),
