@@ -20,7 +20,7 @@ class ScrapingService
           }
         ]
       return message
-    elsif line_message == "覇者"
+    elsif line_message == "モンスター"
       message = [
         FirstReplyJSON.new.getMessage(line_message),
         KinkiMainJSON::REPLY_MESSAGE
