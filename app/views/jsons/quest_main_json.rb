@@ -138,7 +138,7 @@ class QuestMainJSON
                   "action": {
                     "type": "uri",
                     "label": "もっと見る",
-                    "uri": quest_info.quest_url
+                    "uri": quest_info.get_quest_url
                   },
                   "flex": 1
                 }
