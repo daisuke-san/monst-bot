@@ -23,7 +23,7 @@ class ScrapingService
     elsif line_message == "モンスター"
       message = [
         FirstReplyJSON.new.getMessage(line_message),
-        KinkiMainJSON::REPLY_MESSAGE
+        MonsterMainJSON::REPLY_MESSAGE
       ]
       p message
       return message
