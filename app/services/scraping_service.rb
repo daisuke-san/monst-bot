@@ -1,6 +1,7 @@
 class ScrapingService
   require 'nokogiri'
   require_relative '../views/jsons/monster_main_json.rb'
+  require_relative '../views/jsons/quest_main_json.rb'
   require_relative '../views/jsons/kinki_main_json.rb'
   require_relative '../views/jsons/first_reply_json.rb'
 
@@ -25,6 +26,13 @@ class ScrapingService
       message = [
         FirstReplyJSON.new.getMessage(line_message),
         MonsterMainJSON::REPLY_MESSAGE
+      ]
+      p message
+      return message
+    elsif line_message == "クエスト"
+      message = [
+        FirstReplyJSON.new.getMessage(line_message),
+        QuestMainJSON::REPLY_MESSAGE
       ]
       p message
       return message
