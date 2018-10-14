@@ -1,5 +1,8 @@
 class ScrapingService
   require 'nokogiri'
+
+  require_relative '../services/scraping_quest_service.rb'
+
   require_relative '../views/jsons/monster_main_json.rb'
   require_relative '../views/jsons/quest_main_json.rb'
   require_relative '../views/jsons/kinki_main_json.rb'
@@ -29,10 +32,14 @@ class ScrapingService
       ]
       p message
       return message
-    elsif line_message == "クエスト"
+    elsif line_message.include?("攻略")
+      msg = line_message
+      msg.slice!("攻略")
+      msg.gsub(" ", "")
+      quest_info = ScrapingQuestService.new.get_quest_main(msg)
       message = [
         FirstReplyJSON.new.getMessage(line_message),
-        QuestMainJSON::REPLY_MESSAGE
+        QuestMainJSON.new.getMessage(quest_info)
       ]
       p message
       return message
@@ -239,5 +246,4 @@ class ScrapingService
     # end
     # return urls
   end
-
 end
