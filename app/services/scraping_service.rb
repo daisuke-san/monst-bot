@@ -1,5 +1,6 @@
 class ScrapingService
   require 'nokogiri'
+  require_relative '../views/jsons/monster_main_json.rb'
   require_relative '../views/jsons/kinki_main_json.rb'
   require_relative '../views/jsons/first_reply_json.rb'
 
