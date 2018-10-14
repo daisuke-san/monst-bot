@@ -1,4 +1,4 @@
-class MonsterMainJSON
+class QuestMainJSON
   REPLY_MESSAGE = {
   "type": "flex",
   "altText": "クエストメイン",
