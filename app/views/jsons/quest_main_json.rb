@@ -50,7 +50,7 @@ class QuestMainJSON
                   "action": {
                     "type": "postback",
                     "label": "ステージ一覧",
-                    "data": "action=ステージ一覧&url=#{quest_info.get_quest_url}",
+                    "data": "monster=シュリンガーラ&action=ステージ一覧&url=#{quest_info.get_quest_url}",
                     "displayText": "ステージ一覧"
                   },
                   "flex": 1

@@ -10,13 +10,15 @@ class ScrapingPostbackService
 
   def scraping_postback(postback_data)
     array = postback_data.split("&")
-    action_name = array[0].split("=")[1]
-    target_url = array[1].split("=")[1]
+    monster_name = array[0].split("=")[1]
+    action_name = array[1].split("=")[1]
+    target_url = array[2].split("=")[1]
+    p monster_name
     p action_name
     p target_url
     if action_name == "ステージ一覧"
       message = [
-          FirstReplyJSON.new.getMessage(action_name),
+          FirstReplyJSON.new.getMessage("#{monster_name} #{action_name}"),
           QuestStageImageListJSON.new.getMessage("test")
         ]
       return message

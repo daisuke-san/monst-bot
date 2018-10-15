@@ -10,7 +10,7 @@ class QuestStageImageListJSON
             "imageUrl": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg",
             "action": {
               "type": "postback",
-              "label": "Buy",
+              "label": "攻略へ",
               "data": "action=buy&itemid=111"
             }
           },
@@ -18,7 +18,7 @@ class QuestStageImageListJSON
             "imageUrl": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg",
             "action": {
               "type": "message",
-              "label": "Yes",
+              "label": "攻略へ",
               "text": "yes"
             }
           },
@@ -26,7 +26,7 @@ class QuestStageImageListJSON
             "imageUrl": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg",
             "action": {
               "type": "uri",
-              "label": "View detail",
+              "label": "攻略へ",
               "uri": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg"
             }
           }
