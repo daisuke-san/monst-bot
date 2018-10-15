@@ -14,7 +14,7 @@ class ScrapingPostbackService
     target_url = array[1].split("=")[1]
     p action_name
     p target_url
-    if line_message == "ステージ一覧"
+    if action_name == "ステージ一覧"
       message = [
           FirstReplyJSON.new.getMessage(action_name),
           QuestStageImageListJSON.new.getMessage("test")
