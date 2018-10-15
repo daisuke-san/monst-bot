@@ -51,7 +51,7 @@ class QuestMainJSON
                     "type": "postback",
                     "label": "ステージ一覧",
                     "data": "action=buy&itemid=111",
-                    "text": "ステージ一覧!"
+                    "displayText": "ステージ一覧!"
                   },
                   "flex": 1
                 }
