@@ -48,9 +48,10 @@ class QuestMainJSON
                   "style": "link",
                   "height": "sm",
                   "action": {
-                    "type": "message",
+                    "type": "postback",
                     "label": "ステージ一覧",
-                    "text": "[#{quest_info.get_quest_url} ステージ一覧]"
+                    "data": "action=buy&itemid=111",
+                    "text": "ステージ一覧!"
                   },
                   "flex": 1
                 }
