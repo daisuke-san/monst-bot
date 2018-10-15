@@ -3,7 +3,9 @@ class LinebotController < ApplicationController
   #require 'nokogiri'
   require 'open-uri'
   require 'sanitize'
+
   require_relative '../services/scraping_service.rb'
+  require_relative '../services/scraping_postback_service.rb'
 
   # callbackアクションのCSRFトークン認証を無効
   protect_from_forgery :except => [:callback]
@@ -35,15 +37,7 @@ class LinebotController < ApplicationController
           client.reply_message(event['replyToken'], message)
         end
       when Line::Bot::Event::Postback
-        p event
-        data = event['postback']['data']
-        arr = data.split("&")
-        action = arr[0].split("=")[1]
-        url = arr[1].split("=")[1]
-        message = {
-          type: 'text',
-          text: "これだな\n#{url}"
-        }
+        message = ScrapingPostbackService.new.scraping_postback(event['postback']['data'])
         client.reply_message(event['replyToken'], message)
       end
     }
