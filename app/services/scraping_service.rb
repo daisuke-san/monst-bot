@@ -57,7 +57,7 @@ class ScrapingService
           {
             type: 'postback',
             label: "Buy",
-            data: "action=buy&itemid=111",
+            data: "action=ステージ一覧&url=https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109140",
             text: "Buy it!"
           }
         ]

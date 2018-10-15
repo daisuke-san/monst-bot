@@ -50,7 +50,7 @@ class QuestMainJSON
                   "action": {
                     "type": "postback",
                     "label": "ステージ一覧",
-                    "data": "action=buy&itemid=111",
+                    "data": "action=ステージ一覧&url=https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109140",
                     "displayText": "ステージ一覧!"
                   },
                   "flex": 1

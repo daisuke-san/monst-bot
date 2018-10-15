@@ -36,7 +36,15 @@ class LinebotController < ApplicationController
         end
       when Line::Bot::Event::Postback
         p event
-        puts event['postback']['data']
+        action
+        data = event['postback']['data']
+        arr = data.split("&")
+        action = arr[0].split("=")[1]
+        url = arr[1].split("=")[1]
+        message = {
+          type: 'text',
+          text: "これだな\n#{url}"
+        }
         client.reply_message(event['replyToken'], message)
       end
     }

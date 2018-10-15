@@ -94,8 +94,12 @@ class QuestInfo
 end
 
 #Main処理
-msg = "攻略 ムラサメ"
-msg.slice!("攻略")
-msg = msg.gsub(" ", "")
+msg = "action=buy&itemid=111"
+arr = msg.split("&")
+action = arr[0].split("=")[1]
+url = arr[1].split("=")[1]
+p arr
+p action
+p url
 
-msg = get_quest_main(msg)
+# msg = get_quest_main(msg)
