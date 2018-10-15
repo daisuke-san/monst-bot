@@ -34,7 +34,6 @@ class LinebotController < ApplicationController
           puts message
           client.reply_message(event['replyToken'], message)
         end
-      end
       when Line::Bot::Event::Postback
         p event
         puts event['postback']['data']
