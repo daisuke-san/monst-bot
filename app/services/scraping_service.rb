@@ -52,6 +52,15 @@ class ScrapingService
       ]
       p message
       return message
+    elsif line_message == "テスト"
+      message = {
+   　　　"type":"postback",
+   　　　"label":"Buy",
+   　　　"data":"action=buy&itemid=111",
+   　　　"text":"Buy"
+ 　　　}
+      p message
+      return message
     elsif line_message.include?("禁忌")
       quest_name = get_kinki_quest_name(line_message)
       quest_url = get_kinki_quest_url(quest_name)
