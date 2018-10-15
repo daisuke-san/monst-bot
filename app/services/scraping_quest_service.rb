@@ -41,6 +41,10 @@ class ScrapingQuestService
 
     #クエスト画像スクレイピング
     header_image_url = data.css('img')[0]["data-original"]
+    #古い攻略は配置が違うので。。
+    if header_image_url.nil?
+      header_image_url = data.css('img')[2]["src"]
+    end
     p "クエスト画像URL：#{header_image_url}"
 
     #クエスト情報格納
