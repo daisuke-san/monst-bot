@@ -36,7 +36,6 @@ class LinebotController < ApplicationController
         end
       when Line::Bot::Event::Postback
         p event
-        action
         data = event['postback']['data']
         arr = data.split("&")
         action = arr[0].split("=")[1]
