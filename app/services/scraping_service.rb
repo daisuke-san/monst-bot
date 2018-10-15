@@ -36,6 +36,7 @@ class ScrapingService
       msg = line_message
       msg.slice!("攻略")
       msg = msg.gsub(" ", "")
+      p msg
 
       quest_info = ScrapingQuestService.new.get_quest_main(msg)
       message = [
