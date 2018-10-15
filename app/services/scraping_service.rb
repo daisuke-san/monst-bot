@@ -54,13 +54,13 @@ class ScrapingService
       return message
     elsif line_message == "テスト"
       message = [
-        {
-   　　　  type: "postback",
-   　　　  label: "Buy",
-   　　　  data: "action=buy&itemid=111",
-   　　　  text: "Buy"
-        }
-      ]
+          {
+            type: 'postback',
+            label: "Buy",
+            data: "action=buy&itemid=111",
+            text: "Buy it!"
+          }
+        ]
       p message
       return message
     elsif line_message.include?("禁忌")
