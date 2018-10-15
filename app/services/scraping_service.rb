@@ -55,10 +55,10 @@ class ScrapingService
     elsif line_message == "テスト"
       message = [
         {
-   　　　  "type": "postback",
-   　　　  "label": "Buy",
-   　　　  "data": "action=buy&itemid=111",
-   　　　  "text": "Buy"
+   　　　  type: "postback",
+   　　　  label: "Buy",
+   　　　  data: "action=buy&itemid=111",
+   　　　  text: "Buy"
         }
       ]
       p message
