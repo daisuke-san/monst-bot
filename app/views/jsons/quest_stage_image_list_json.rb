@@ -1,5 +1,5 @@
 class QuestStageImageListJSON
-  def getMessage(quest_info)
+  def getMessage(images)
     message = {
       "type": "template",
       "altText": "this is a image carousel template",
@@ -7,7 +7,7 @@ class QuestStageImageListJSON
         "type": "image_carousel",
         "columns": [
           {
-            "imageUrl": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg",
+            "imageUrl": images[0],
             "action": {
               "type": "postback",
               "label": "攻略へ",
@@ -15,19 +15,75 @@ class QuestStageImageListJSON
             }
           },
           {
-            "imageUrl": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg",
+            "imageUrl": images[1],
             "action": {
-              "type": "message",
+              "type": "postback",
               "label": "攻略へ",
-              "text": "yes"
+              "data": "action=buy&itemid=111"
             }
           },
           {
-            "imageUrl": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg",
+            "imageUrl": images[2],
             "action": {
-              "type": "uri",
+              "type": "postback",
               "label": "攻略へ",
-              "uri": "https://gamewith.akamaized.net/img/2f487e194d0e3ba6b42d0fb2f852081f.jpg"
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[3],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[4],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[5],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[6],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[7],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[8],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
+            }
+          },
+          {
+            "imageUrl": images[9],
+            "action": {
+              "type": "postback",
+              "label": "攻略へ",
+              "data": "action=buy&itemid=111"
             }
           }
         ]

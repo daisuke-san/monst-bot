@@ -3,6 +3,7 @@ class ScrapingQuestService
 
   MONST_URL = "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/3054"
 
+  #public
   def get_quest_main(line_input_message)
     p "ライン入力文字列：#{line_input_message}"
     quest_url = get_quest_url(line_input_message)
@@ -10,6 +11,7 @@ class ScrapingQuestService
     return quest_info
   end
 
+  #private
   def get_quest_url(line_input_message)
     html_monst = open(MONST_URL)
     doc = Nokogiri::HTML.parse(html_monst)
@@ -29,6 +31,7 @@ class ScrapingQuestService
     return quest_url
   end
 
+  #private
   def get_quest_info(quest_url)
     html_monst = open(quest_url)
     doc = Nokogiri::HTML.parse(html_monst)
@@ -55,6 +58,35 @@ class ScrapingQuestService
 
     return quest_info
   end
+
+  #public
+  def get_quest_image_list(target_url)
+    html_monst = open(target_url)
+    doc = Nokogiri::HTML.parse(html_monst)
+    trigger_data = nil
+    data = doc.css('#article-body').css('.c-progressive-img').css('img')
+    imgs = []
+    data.each_with_index do |record, i|
+      if i < 10
+        p record["data-original"]
+        imgs.push(record["data-original"])
+      end
+    end
+    return imgs
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   class QuestInfo
     @@quest_url = nil

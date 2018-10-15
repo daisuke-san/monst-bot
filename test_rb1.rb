@@ -93,6 +93,21 @@ class QuestInfo
   end
 end
 
+def get_quest_image_list(target_url)
+  html_monst = open(target_url)
+  doc = Nokogiri::HTML.parse(html_monst)
+  trigger_data = nil
+  data = doc.css('#article-body').css('.c-progressive-img').css('img')
+  imgs = []
+  data.each_with_index do |record, i|
+    if i < 10
+      p record["data-original"]
+      imgs.push(record["data-original"])
+    end
+  end
+  return imgs
+end
+
 #Main処理
 msg = "action=buy&itemid=111"
 arr = msg.split("&")
@@ -103,3 +118,4 @@ p action
 p url
 
 # msg = get_quest_main(msg)
+get_quest_image_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109143")
