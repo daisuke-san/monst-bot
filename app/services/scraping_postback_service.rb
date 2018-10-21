@@ -5,6 +5,7 @@ class ScrapingPostbackService
 
   require_relative '../views/jsons/first_reply_json.rb'
   require_relative '../views/jsons/quest_stage_image_list_json.rb'
+  require_relative '../views/jsons/quest_tekisei_json.rb'
 
   MONST_URL = "https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/"
 
@@ -19,6 +20,12 @@ class ScrapingPostbackService
       message = [
           FirstReplyJSON.new.getMessage(action_name),
           QuestStageImageListJSON.new.getMessage(quest_image_list)
+        ]
+      return message
+    elsif action_name == "攻略適正"
+      message = [
+          FirstReplyJSON.new.getMessage(action_name),
+          QuestTekiseiJSON.new.getMessage(quest_image_list)
         ]
       return message
     end

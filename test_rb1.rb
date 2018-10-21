@@ -97,15 +97,54 @@ def get_quest_image_list(target_url)
   html_monst = open(target_url)
   doc = Nokogiri::HTML.parse(html_monst)
   trigger_data = nil
-  data = doc.css('#article-body').css('.c-progressive-img').css('img')
+  # data = doc.css('#article-body').css('.c-progressive-img').css('img')
+  # imgs = []
+  # data.each_with_index do |record, i|
+  #   if i < 10
+  #     p record["data-original"]
+  #     imgs.push(record["data-original"])
+  #   end
+  # end
+
+  data = doc.css('#article-body')
   imgs = []
-  data.each_with_index do |record, i|
-    if i < 10
-      p record["data-original"]
-      imgs.push(record["data-original"])
-    end
+  data.each_with_index do |record|
+    reg = /.*!/.match("record.text")
+    p reg.post_match
+    # if record.text !~ /第1ステージ!/
+    #   p record.text
+    # end
   end
   return imgs
+end
+
+def get_quest_tekisei_list(target_url)
+  html_monst = open(target_url)
+  doc = Nokogiri::HTML.parse(html_monst)
+  trigger_data = nil
+
+  data = doc.css('.monst-tekisei-table')
+  tekisei_css = nil
+  data.each do |record|
+    if record.text.include?('攻略適正ランキング')
+      tekisei_css = record
+    end
+  end
+  tekisei_css.css('table tr').each do |record|
+    p record.text
+  end
+  # images = data.css('img')
+
+  # images.each do |image_data|
+  #   p image_data['src']
+  # end
+
+  # data.each do |record|
+    # p "#{record.text}\n"
+    # if record.text !~ /第1ステージ!/
+    #   p record.text
+    # end
+  # end
 end
 
 #Main処理
@@ -118,4 +157,5 @@ p action
 p url
 
 # msg = get_quest_main(msg)
-get_quest_image_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109143")
+# get_quesst_image_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109143")
+get_quest_tekisei_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/123365")

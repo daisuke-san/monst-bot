@@ -104,9 +104,10 @@ class QuestMainJSON
                   "style": "link",
                   "height": "sm",
                   "action": {
-                    "type": "message",
-                    "label": "適正",
-                    "text": "[#{quest_info.get_quest_url} 適正]"
+                    "type": "postback",
+                    "label": "攻略適正",
+                    "data": "action=攻略適正&url=#{quest_info.get_quest_url}",
+                    "displayText": "攻略適正"
                   },
                   "flex": 1
                 },
