@@ -211,7 +211,7 @@ class QuestTekiseiJSON
                 },
                 {
                   "type": "text",
-                  "text": "小野小町（神化）\n【貫通/バランス/魔人】\nアビ：AGB/ドレイン+AB/毒キラー\n敵を一筆書きしやすい性能。",
+                  "text": "小野小町（神化）【貫通/バランス/魔人】アビ：AGB/ドレイン+AB/毒キラー敵を一筆書きしやすい性能。",
                   "gravity": "top",
                   "size": "xxs",
                   "wrap": true,
