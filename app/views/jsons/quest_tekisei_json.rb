@@ -406,7 +406,7 @@ class QuestTekiseiJSON
           "url": tekisei_info.get_img_url,
           "aspectMode": "cover",
           "aspectRatio": "1:1",
-          "size": "xxs",
+          "size": "xs",
           "gravity": "center",
           "flex": 1
         },
@@ -463,6 +463,7 @@ class QuestTekiseiJSON
           "gravity": "top",
           "size": "xxs",
           "wrap": true,
+          "maxLines": 4,
           "flex": 1
         },
         {
