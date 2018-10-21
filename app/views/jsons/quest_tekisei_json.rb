@@ -406,7 +406,7 @@ class QuestTekiseiJSON
           "url": tekisei_info.get_img_url,
           "aspectMode": "cover",
           "aspectRatio": "1:1",
-          "size": "sm",
+          "size": "xxs",
           "gravity": "center",
           "flex": 1
         },
@@ -439,16 +439,16 @@ class QuestTekiseiJSON
       end
     end
     p images_json.flatten!
-    tes = []
-    images_json.each_with_index do |data, index|
-      if index > 3
-        break
-      end
-      tes << data
-    end
-    p tes
-    return tes
-    # return images_json
+    # tes = []
+    # images_json.each_with_index do |data, index|
+    #   if index > 3
+    #     break
+    #   end
+    #   tes << data
+    # end
+    # p tes
+    # return tes
+    return images_json
   end
 
   # private
@@ -494,15 +494,15 @@ class QuestTekiseiJSON
       end
     end
     p contens_json.flatten!
-    tes = []
-    contens_json.each_with_index do |data, index|
-      if index > 3
-        break
-      end
-      tes << data
-    end
-    p tes
-    return tes
-    # return contens_json
+    # tes = []
+    # contens_json.each_with_index do |data, index|
+    #   if index > 3
+    #     break
+    #   end
+    #   tes << data
+    # end
+    # p tes
+    # return tes
+    return contens_json
   end
 end
