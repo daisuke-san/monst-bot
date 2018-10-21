@@ -1,7 +1,5 @@
 class QuestTekiseiJSON
-  def getMessage(quest_info)
-    images = create_image_json(quest_info)
-    contents = create_contents_json(quest_info)
+  def getMessage(tekisei_infos)
 
     message = {
       "type": "flex",
@@ -26,22 +24,9 @@ class QuestTekiseiJSON
         },
         "body": {
           "type": "box",
-          "layout": "horizontal",
+          "layout": "vertical",
           "spacing": "md",
-          "contents": [
-            {
-              "type": "box",
-              "layout": "vertical",
-              "flex": 1,
-              "contents": images
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "flex": 3,
-              "contents": contents
-            }
-          ]
+          "contents": create_json(tekisei_infos)
         }
       }
     }
@@ -396,115 +381,71 @@ class QuestTekiseiJSON
   end
 
   # private
-  def create_image_json(tekisei_infos)
-    images_json = []
-    duplicated_words = []
+  def create_json(tekisei_infos)
+    message = []
     tekisei_infos.each do |tekisei_info|
-      if tekisei_info.get_header_rank.nil?
-        parts = {
+      parts = {
+        "type": "box",
+        "layout": "horizontal",
+        "flex": 1,
+        "contents": create_row_json(tekisei_info)
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      }
+      message << parts
+    end
+    p message.flatten!
+    return message
+  end
+
+  # private
+  def create_row_json(tekisei_info)
+    message = []
+    if tekisei_info.get_header_rank.nil?
+      parts = [
+        {
           "type": "image",
           "url": tekisei_info.get_img_url,
           "aspectMode": "cover",
           "aspectRatio": "1:1",
-          "size": "xxs",
+          "size": "sm",
           "gravity": "center",
           "flex": 1
         },
         {
-          "type": "separator",
-          "margin": "md"
-        }
-        images_json << parts
-      else
-        if duplicated_words.include?(tekisei_info.get_header_rank)
-          break
-        end
-        duplicated_words << tekisei_info.get_header_rank
-
-        parts = {
-          "type": "text",
-          "text": tekisei_info.get_header_rank,
-          "gravity": "center",
-          "align": "center",
-          "size": "xxs",
-          "weight": "bold",
-          "wrap": true,
-          "flex": 1
-        },
-        {
-          "type": "separator",
-          "margin": "md"
-        }
-        images_json << parts
-      end
-    end
-    p images_json.flatten!
-    # tes = []
-    # images_json.each_with_index do |data, index|
-    #   if index > 3
-    #     break
-    #   end
-    #   tes << data
-    # end
-    # p tes
-    # return tes
-    return images_json
-  end
-
-  # private
-  def create_contents_json(tekisei_infos)
-    contens_json = []
-    duplicated_words = []
-    tekisei_infos.each do |tekisei_info|
-      if tekisei_info.get_header_rank.nil?
-        parts = {
           "type": "text",
           "text": tekisei_info.get_contents,
           "gravity": "top",
           "size": "xxs",
           "wrap": true,
-          "maxLines": 4,
-          "margin": "md",
-          "flex": 1
-        },
-        {
-          "type": "separator",
-          "margin": "md"
+          "flex": 3
         }
-        contens_json << parts
-      else
-        if duplicated_words.include?(tekisei_info.get_header_rank)
-          break
-        end
-        duplicated_words << tekisei_info.get_header_rank
-
-        parts = {
+      ]
+      return parts
+    else
+      parts = [
+        {
           "type": "text",
-          "text": "おすすめキャラ",
+          "text": tekisei_info.get_header_rank,
           "gravity": "center",
-          "align": "center",
           "size": "xxs",
           "weight": "bold",
           "wrap": true,
           "flex": 1
         },
         {
-          "type": "separator",
-          "margin": "md"
+          "type": "text",
+          "text": "おすすめキャラ",
+          "gravity": "center",
+          "size": "xxs",
+          "weight": "bold",
+          "wrap": true,
+          "flex": 3
         }
-        contens_json << parts
-      end
+      ]
+      return parts
     end
-    p contens_json.flatten!
-    # tes = []
-    # contens_json.each_with_index do |data, index|
-    #   if index > 3
-    #     break
-    #   end
-    #   tes << data
-    # end
-    # p tes
-    # return tes
-    return contens_json
   end
 end

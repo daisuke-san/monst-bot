@@ -271,6 +271,73 @@ def create_contents_json(tekisei_infos)
   return message
 end
 
+def create_json(tekisei_infos)
+  message = []
+  tekisei_infos.each do |tekisei_info|
+    parts = {
+      "type": "box",
+      "layout": "horizontal",
+      "flex": 1,
+      "contents": create_row_json(tekisei_info)
+    },
+    {
+      "type": "separator",
+      "margin": "md"
+    }
+    message << parts
+  end
+  p message.flatten!
+  return message
+end
+
+def create_row_json(tekisei_info)
+  message = []
+  if tekisei_info.get_header_rank.nil?
+    parts = [
+      {
+        "type": "image",
+        "url": tekisei_info.get_img_url,
+        "aspectMode": "cover",
+        "aspectRatio": "1:1",
+        "size": "sm",
+        "gravity": "center",
+        "flex": 1
+      },
+      {
+        "type": "text",
+        "text": tekisei_info.get_contents,
+        "gravity": "top",
+        "size": "xxs",
+        "wrap": true,
+        "flex": 3
+      }
+    ]
+    return parts
+  else
+    parts = [
+      {
+        "type": "text",
+        "text": tekisei_info.get_header_rank,
+        "gravity": "center",
+        "size": "xxs",
+        "weight": "bold",
+        "wrap": true,
+        "flex": 1
+      },
+      {
+        "type": "text",
+        "text": "おすすめキャラ",
+        "gravity": "center",
+        "size": "xxs",
+        "weight": "bold",
+        "wrap": true,
+        "flex": 3
+      }
+    ]
+    return parts
+  end
+end
+
 #Main処理
 msg = "action=buy&itemid=111"
 arr = msg.split("&")
@@ -283,5 +350,6 @@ p url
 # msg = get_quest_main(msg)
 # get_quesst_image_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109143")
 tekisei_infos = get_quest_tekisei_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/123365")
-create_image_json(tekisei_infos)
-create_contents_json(tekisei_infos)
+# create_image_json(tekisei_infos)
+# create_contents_json(tekisei_infos)
+create_json(tekisei_infos)
