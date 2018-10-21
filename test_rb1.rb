@@ -130,21 +130,145 @@ def get_quest_tekisei_list(target_url)
       tekisei_css = record
     end
   end
+
+  tekisei_infos = []
   tekisei_css.css('table tr').each do |record|
-    p record.text
+    th = record.css('th')
+    td = record.css('td')
+    tekisei_info = TekiseiInfo.new
+
+    if th.empty?
+      td.each_with_index do |td_data, index|
+        if index == 0
+          tekisei_info.set_img_url(td.at('img')['src'])
+        else
+          tekisei_info.set_contents(td_data.text)
+        end
+      end
+    elsif td.empty?
+      th.each_with_index do |th_data, index|
+        if index == 0
+          tekisei_info.set_header_rank(th_data.text)
+        end
+      end
+    else
+      p "なんじゃこれ"
+    end
+    tekisei_infos << tekisei_info
   end
-  # images = data.css('img')
+  tekisei_infos.each do |tekisei_info|
+    p "#{tekisei_info.get_header_rank},#{tekisei_info.get_img_url},#{tekisei_info.get_contents}"
+  end
+  return tekisei_infos
+end
 
-  # images.each do |image_data|
-  #   p image_data['src']
-  # end
+class TekiseiInfo
+  @header_rank = nil
+  @img_url = nil
+  @contents = nil
 
-  # data.each do |record|
-    # p "#{record.text}\n"
-    # if record.text !~ /第1ステージ!/
-    #   p record.text
-    # end
-  # end
+  def set_header_rank(header_rank)
+    @header_rank = header_rank
+  end
+
+  def get_header_rank
+    return @header_rank
+  end
+
+  def set_img_url(img_url)
+    @img_url = img_url
+  end
+
+  def get_img_url
+    return @img_url
+  end
+
+  def set_contents(contents)
+    @contents = contents
+  end
+
+  def get_contents
+    return @contents
+  end
+end
+
+def create_image_json(tekisei_infos)
+  message = []
+  tekisei_infos.each do |tekisei_info|
+    if tekisei_info.get_header_rank.nil?
+      parts = {
+        "type": "image",
+        "url": tekisei_info.get_img_url,
+        "aspectMode": "cover",
+        "aspectRatio": "1:1",
+        "size": "sm",
+        "gravity": "center",
+        "flex": 1
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      }
+      message << parts
+    else
+      parts = {
+        "type": "text",
+        "text": tekisei_info.get_header_rank,
+        "gravity": "center",
+        "align": "center",
+        "size": "xxs",
+        "weight": "bold",
+        "wrap": true,
+        "flex": 1
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      }
+      message << parts
+    end
+  end
+  p message.flatten!
+  return message
+end
+
+def create_contents_json(tekisei_infos)
+  message = []
+  tekisei_infos.each do |tekisei_info|
+    if tekisei_info.get_header_rank.nil?
+      parts = {
+        "type": "text",
+        "text": tekisei_info.get_contents,
+        "gravity": "top",
+        "size": "xxs",
+        "wrap": true,
+        "flex": 1
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      }
+      message << parts
+    else
+      parts = {
+        "type": "text",
+        "text": "おすすめキャラ",
+        "gravity": "center",
+        "align": "center",
+        "size": "xxs",
+        "weight": "bold",
+        "wrap": true,
+        "flex": 1
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      }
+      message << parts
+    end
+  end
+  p message.flatten!
+  return message
 end
 
 #Main処理
@@ -158,4 +282,6 @@ p url
 
 # msg = get_quest_main(msg)
 # get_quesst_image_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/109143")
-get_quest_tekisei_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/123365")
+tekisei_infos = get_quest_tekisei_list("https://xn--eckwa2aa3a9c8j8bve9d.gamewith.jp/article/show/123365")
+create_image_json(tekisei_infos)
+create_contents_json(tekisei_infos)

@@ -15,17 +15,19 @@ class ScrapingPostbackService
     target_url = array[1].split("=")[1]
     p action_name
     p target_url
-    quest_image_list = ScrapingQuestService.new.get_quest_image_list(target_url)
+    scraping_quest_service = ScrapingQuestService.new
     if action_name == "ステージ一覧"
+      quest_image_list = scraping_quest_service.get_quest_image_list(target_url)
       message = [
           FirstReplyJSON.new.getMessage(action_name),
           QuestStageImageListJSON.new.getMessage(quest_image_list)
         ]
       return message
     elsif action_name == "攻略適正"
+      quest_tekisei_info = scraping_quest_service.get_quest_tekisei_list(target_url)
       message = [
           FirstReplyJSON.new.getMessage(action_name),
-          QuestTekiseiJSON.new.getMessage(quest_image_list)
+          QuestTekiseiJSON.new.getMessage(quest_tekisei_info)
         ]
       return message
     end

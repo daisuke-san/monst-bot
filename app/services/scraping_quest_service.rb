@@ -75,19 +75,56 @@ class ScrapingQuestService
     return imgs
   end
 
+  # public
+  def get_quest_tekisei_list(target_url)
+    html_monst = open(target_url)
+    doc = Nokogiri::HTML.parse(html_monst)
+    trigger_data = nil
+
+    data = doc.css('.monst-tekisei-table')
+    tekisei_css = nil
+    data.each do |record|
+      if record.text.include?('攻略適正ランキング')
+        tekisei_css = record
+      end
+    end
+
+    tekisei_infos = []
+    tekisei_css.css('table tr').each do |record|
+      th = record.css('th')
+      td = record.css('td')
+      tekisei_info = TekiseiInfo.new
+
+      if th.empty?
+        td.each_with_index do |td_data, index|
+          if index == 0
+            tekisei_info.set_img_url(td.at('img')['src'])
+          else
+            tekisei_info.set_contents(td_data.text)
+          end
+        end
+      elsif td.empty?
+        th.each_with_index do |th_data, index|
+          if index == 0
+            tekisei_info.set_header_rank(th_data.text)
+          end
+        end
+      else
+        p "なんじゃこれ"
+      end
+      tekisei_infos << tekisei_info
+    end
+    tekisei_infos.each do |tekisei_info|
+      p "#{tekisei_info.get_header_rank},#{tekisei_info.get_img_url},#{tekisei_info.get_contents}"
+    end
+    return tekisei_infos
+  end
 
 
 
 
 
-
-
-
-
-
-
-
-
+  # クエストメニュー用Vo
   class QuestInfo
     @@quest_url = nil
     @@monster_name = nil
@@ -127,4 +164,34 @@ class ScrapingQuestService
     end
   end
 
+  # クエスト適正用Vo
+  class TekiseiInfo
+    @header_rank = nil
+    @img_url = nil
+    @contents = nil
+
+    def set_header_rank(header_rank)
+      @header_rank = header_rank
+    end
+
+    def get_header_rank
+      return @header_rank
+    end
+
+    def set_img_url(img_url)
+      @img_url = img_url
+    end
+
+    def get_img_url
+      return @img_url
+    end
+
+    def set_contents(contents)
+      @contents = contents
+    end
+
+    def get_contents
+      return @contents
+    end
+  end
 end
