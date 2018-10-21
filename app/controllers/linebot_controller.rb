@@ -38,6 +38,7 @@ class LinebotController < ApplicationController
         end
       when Line::Bot::Event::Postback
         message = ScrapingPostbackService.new.scraping_postback(event['postback']['data'])
+        p message
         client.reply_message(event['replyToken'], message)
       end
     }
