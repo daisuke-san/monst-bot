@@ -464,6 +464,7 @@ class QuestTekiseiJSON
           "size": "xxs",
           "wrap": true,
           "maxLines": 4,
+          "margin": "md",
           "flex": 1
         },
         {
