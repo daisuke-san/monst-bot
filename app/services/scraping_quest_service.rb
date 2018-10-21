@@ -78,7 +78,7 @@ class ScrapingQuestService
   # public
   def get_quest_tekisei_list(target_url)
     html_monst = open(target_url)
-    doc = Nokogiri::HTML.parse(html_monst)
+    doc = Nokogiri::HTML.parse(html_monst, nil, "UTF-8")
     trigger_data = nil
 
     data = doc.css('.monst-tekisei-table')
