@@ -384,7 +384,7 @@ class QuestTekiseiJSON
   def create_json(tekisei_infos)
     message = []
     tekisei_infos.each do |tekisei_info|
-      if tekisei_info.get_header_rank == "Cランク"
+      if tekisei_info.get_header_rank == "Bランク"
         break
       end
       parts = {
