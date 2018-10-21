@@ -51,7 +51,7 @@ class QuestTekiseiJSON
                   "aspectMode": "cover",
                   "aspectRatio": "1:1",
                   "size": "sm",
-                  "gravity": "bottom",
+                  "gravity": "center",
                   "flex": 1
                 },
                 {
@@ -64,7 +64,7 @@ class QuestTekiseiJSON
                   "aspectMode": "cover",
                   "aspectRatio": "1:1",
                   "size": "sm",
-                  "gravity": "bottom",
+                  "gravity": "center",
                   "flex": 1
                 },
                 {
@@ -77,7 +77,7 @@ class QuestTekiseiJSON
                   "aspectMode": "cover",
                   "aspectRatio": "1:1",
                   "size": "sm",
-                  "gravity": "bottom",
+                  "gravity": "center",
                   "flex": 1
                 },
                 {
@@ -90,7 +90,7 @@ class QuestTekiseiJSON
                   "aspectMode": "cover",
                   "aspectRatio": "1:1",
                   "size": "sm",
-                  "gravity": "bottom",
+                  "gravity": "center",
                   "flex": 1
                 },
                 {
@@ -103,7 +103,7 @@ class QuestTekiseiJSON
                   "aspectMode": "cover",
                   "aspectRatio": "1:1",
                   "size": "sm",
-                  "gravity": "bottom",
+                  "gravity": "center",
                   "flex": 1
                 },
                 {
@@ -116,7 +116,72 @@ class QuestTekiseiJSON
                   "aspectMode": "cover",
                   "aspectRatio": "1:1",
                   "size": "sm",
-                  "gravity": "bottom",
+                  "gravity": "center",
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "image",
+                  "url": "https://gamewith.akamaized.net/article_tools/monst/gacha/3661.jpg",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "sm",
+                  "gravity": "center",
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "image",
+                  "url": "https://gamewith.akamaized.net/article_tools/monst/gacha/3661.jpg",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "sm",
+                  "gravity": "center",
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "image",
+                  "url": "https://gamewith.akamaized.net/article_tools/monst/gacha/3661.jpg",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "sm",
+                  "gravity": "center",
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "image",
+                  "url": "https://gamewith.akamaized.net/article_tools/monst/gacha/3661.jpg",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "sm",
+                  "gravity": "center",
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "image",
+                  "url": "https://gamewith.akamaized.net/article_tools/monst/gacha/3661.jpg",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "sm",
+                  "gravity": "center",
                   "flex": 1
                 },
                 {
@@ -137,6 +202,66 @@ class QuestTekiseiJSON
                   "align": "center",
                   "size": "xxs",
                   "weight": "bold",
+                  "wrap": true,
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "text",
+                  "text": "小野小町（神化）\n【貫通/バランス/魔人】\nアビ：AGB/ドレイン+AB/毒キラー\n敵を一筆書きしやすい性能。",
+                  "gravity": "top",
+                  "size": "xxs",
+                  "wrap": true,
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "text",
+                  "text": "小野小町（神化）\n【貫通/バランス/魔人】\nアビ：AGB/ドレイン+AB/毒キラー\n敵を一筆書きしやすい性能。",
+                  "gravity": "top",
+                  "size": "xxs",
+                  "wrap": true,
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "text",
+                  "text": "小野小町（神化）\n【貫通/バランス/魔人】\nアビ：AGB/ドレイン+AB/毒キラー\n敵を一筆書きしやすい性能。",
+                  "gravity": "top",
+                  "size": "xxs",
+                  "wrap": true,
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "text",
+                  "text": "小野小町（神化）\n【貫通/バランス/魔人】\nアビ：AGB/ドレイン+AB/毒キラー\n敵を一筆書きしやすい性能。",
+                  "gravity": "top",
+                  "size": "xxs",
+                  "wrap": true,
+                  "flex": 1
+                },
+                {
+                  "type": "separator",
+                  "margin": "md"
+                },
+                {
+                  "type": "text",
+                  "text": "小野小町（神化）\n【貫通/バランス/魔人】\nアビ：AGB/ドレイン+AB/毒キラー\n敵を一筆書きしやすい性能。",
+                  "gravity": "top",
+                  "size": "xxs",
                   "wrap": true,
                   "flex": 1
                 },
