@@ -140,7 +140,7 @@ def get_quest_tekisei_list(target_url)
     if th.empty?
       td.each_with_index do |td_data, index|
         if index == 0
-          tekisei_info.set_img_url(td.at('img')['src'])
+          tekisei_info.set_img_url(td.at('img')["data-original"])
         else
           tekisei_info.set_contents(td_data.text)
         end
