@@ -398,6 +398,7 @@ class QuestTekiseiJSON
   # private
   def create_image_json(tekisei_infos)
     images_json = []
+    duplicated_words = []
     tekisei_infos.each do |tekisei_info|
       if tekisei_info.get_header_rank.nil?
         parts = {
@@ -415,6 +416,11 @@ class QuestTekiseiJSON
         }
         images_json << parts
       else
+        if duplicated_words.include?(tekisei_info.get_header_rank)
+          break
+        end
+        duplicated_words << tekisei_info.get_header_rank
+
         parts = {
           "type": "text",
           "text": tekisei_info.get_header_rank,
@@ -439,6 +445,7 @@ class QuestTekiseiJSON
   # private
   def create_contents_json(tekisei_infos)
     contens_json = []
+    duplicated_words = []
     tekisei_infos.each do |tekisei_info|
       if tekisei_info.get_header_rank.nil?
         parts = {
@@ -455,6 +462,11 @@ class QuestTekiseiJSON
         }
         contens_json << parts
       else
+        if duplicated_words.include?(tekisei_info.get_header_rank)
+          break
+        end
+        duplicated_words << tekisei_info.get_header_rank
+
         parts = {
           "type": "text",
           "text": "おすすめキャラ",

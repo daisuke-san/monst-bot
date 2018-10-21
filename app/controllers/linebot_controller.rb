@@ -33,7 +33,7 @@ class LinebotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
           message = ScrapingService.new.scraping(event.message['text'])
-          puts message
+          p message
           client.reply_message(event['replyToken'], message)
         end
       when Line::Bot::Event::Postback
