@@ -299,7 +299,7 @@ def create_row_json(tekisei_info)
         "url": tekisei_info.get_img_url,
         "aspectMode": "cover",
         "aspectRatio": "1:1",
-        "size": "sm",
+        "size": "xxs",
         "gravity": "center",
         "flex": 1
       },
